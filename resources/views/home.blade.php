@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container">
+    <div class="container h-100">
         <div class="row py-5">
             <div class="col-12 text-center">
 

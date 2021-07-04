@@ -1,0 +1,8 @@
+.h-100 {
+    min-height: 100vh;
+}
+
+.footer-position {
+    position: fixed;
+    bottom: 0vh;
+}
