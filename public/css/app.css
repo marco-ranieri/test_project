@@ -1,12 +1,3 @@
-.h-100 {
-    min-height: 100vh;
-}
-
-.footer-position {
-    position: fixed;
-    bottom: 0vh;
-}
-
 @charset "UTF-8";
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
@@ -10854,5 +10845,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.h-100 {
+    min-height: 100vh;
+}
+
+.footer-position {
+    position: fixed;
+    bottom: 0vh;
+}
+
 
 
