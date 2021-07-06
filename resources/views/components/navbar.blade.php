@@ -1,18 +1,24 @@
 <nav class="topnav">
     <div class="p-2 d-flex justify-content-around">
-        <div class="d-flex">
+        <div class="d-flex align-items-center">
 
             <a class="active navbar-brand" href="#home">Home</a>
 
             @if (Auth::user())
-              <a class="">Hello, {{Auth::user()->name}}</a>
-              <a href="{{route('revisor.request')}}">Diventa Revisore!</a>
-              <a class="align-items-center">
-                <a class="" id="link" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit();">Logout <i class="fas fa-sign-out-alt"></i></a>
-              </a>
-              <form method="POST" action="{{route('logout')}}"" id="logout">
-                @csrf
-            </form>
+            <li class="dropdown">
+                <a class="dropdown-toggle" id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hello, {{Auth::user()->name}}</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarUserDropdown">
+                    <li class="py-2">
+                        <a class="text-dark" href="{{route('revisor.request')}}">Diventa Revisore!</a>
+                    </li>
+                    <li class="py-2">
+                        <a class="text-dark" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit();">Logout <i class="fas fa-sign-out-alt"></i></a>
+                        <form method="POST" action="{{route('logout')}}"" id="logout">
+                            @csrf
+                        </form>
+                    </li>
+                </ul>
+            </li>
             @endif
 
             <form class="d-flex py-2">
