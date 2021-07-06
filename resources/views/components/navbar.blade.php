@@ -1,27 +1,34 @@
 <nav class="topnav">
     <div class="p-2 d-flex justify-content-around">
         <div class="d-flex">
+
             <a class="active navbar-brand" href="#home">Home</a>
-            <a class="">Hello, {{Auth::user()->name}}</a>
+
+            @if (Auth::user())
+              <a class="">Hello, {{Auth::user()->name}}</a>
+            @endif
+
             <form class="d-flex py-2">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
             </button>
+
         </div>
+
         <div class="d-flex">
+
             <a href="#news">News</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
             <a href="{{route('login')}}">Login</a>
             <a href="{{route('register')}}">Registrati</a>
+
         </div>
-
     </div>
-
-
 </nav>
 
 
