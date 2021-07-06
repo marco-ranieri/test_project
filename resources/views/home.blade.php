@@ -1,5 +1,13 @@
 <x-layout>
 
+    @if (session('revisor.request.message'))
+        <div class="row justify-content-center">
+            <div class="col-md-auto accept-message alert text-center">
+                {{session('revisor.request.message')}} <i class="fas fa-check-circle"></i>
+            </div>
+        </div>
+    @endif
+
     <div class="container h-100">
         <div class="row py-5">
             <div class="col-12 py-5 text-center">
