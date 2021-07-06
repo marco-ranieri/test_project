@@ -7,6 +7,12 @@
             @if (Auth::user())
               <a class="">Hello, {{Auth::user()->name}}</a>
               <a href="{{route('revisor.request')}}">Diventa Revisore!</a>
+              <a class="align-items-center">
+                <a class="" id="link" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit();">Logout <i class="fas fa-sign-out-alt"></i></a>
+              </a>
+              <form method="POST" action="{{route('logout')}}"" id="logout">
+                @csrf
+            </form>
             @endif
 
             <form class="d-flex py-2">
@@ -25,8 +31,10 @@
             <a href="#news">News</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
+            @guest
             <a href="{{route('login')}}">Login</a>
             <a href="{{route('register')}}">Registrati</a>
+            @endguest
 
         </div>
     </div>
