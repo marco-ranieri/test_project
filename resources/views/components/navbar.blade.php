@@ -6,6 +6,7 @@
 
             @if (Auth::user())
               <a class="">Hello, {{Auth::user()->name}}</a>
+              <a href="{{route('revisor.request')}}">Diventa Revisore!</a>
             @endif
 
             <form class="d-flex py-2">

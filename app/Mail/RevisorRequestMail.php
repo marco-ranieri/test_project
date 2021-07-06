@@ -32,6 +32,6 @@ class RevisorRequestMail extends Mailable
      */
     public function build()
     {
-        return $this->from(Auth::user()->email)->view('mails.revisor');
+        return $this->from(Auth::user()->email)->view('mails.revisor_request_mail');
     }
 }

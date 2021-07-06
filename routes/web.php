@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Sail\Console\PublishCommand;
 
@@ -15,4 +16,10 @@ use Laravel\Sail\Console\PublishCommand;
 |
 */
 
+
+// General
 Route::get('/', [PublicController::class, 'home'])->name('home');
+
+// Revisor requests
+Route::get('/revisor', [UserController::class, 'revisorRequest'])->name('revisor.request');
+Route::post('/revisor/submit', [UserController::class, 'revisorRequestSubmit'])->name('revisor.submit');
