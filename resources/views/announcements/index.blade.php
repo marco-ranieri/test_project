@@ -21,7 +21,7 @@
                             </p>
                         </div>
                         <div class="card-footer d-flex justify-content-between">
-                            Category: <a href="">{{$announcement->category->name}}</a>
+                            Category: <a href="{{ route( 'announcements.by.category', [$announcement->category->name, $announcement->category->id] ) }}">{{$announcement->category->name}}</a>
                             <i>Annuncio creato il {{$announcement->created_at->format('d/m/Y')}}</i>
                             <i>ID annuncio: {{$announcement->id}}</i>
                             <i>Inserito da: {{$announcement->user->name}}</i>
@@ -32,10 +32,10 @@
         @endforeach
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center my-5 py-5">
         <div class="col-12 col-md-6">
             {{$announcements->links()}}
         </div>
     </div>
-
+    <div class="row mb-5 pb-5"></div>
 </x-layout>

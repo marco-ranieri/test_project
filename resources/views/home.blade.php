@@ -30,8 +30,8 @@
             </div>
         </div>
 
-        @foreach ($announcements as $announcement)
-            <div class="row justify-content-center">
+        <div class="row justify-content-center mb-5 pb-5">
+            @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-8 py-3">
                     <div class="card">
                         <div class="card-header"> {{$announcement->title}}</div>
@@ -50,8 +50,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
+        <div class="row mb-5 pb-5"></div>
     </div>
 
 </x-layout>
