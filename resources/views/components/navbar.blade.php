@@ -41,6 +41,17 @@
                     @endguest
                 </ul>
             </div>
+            <div class="dropdown px-2">
+                <div class="dropdown-toggle py-2" id="navbarCategoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarCategoriesDropdown">
+                        @foreach ( $categories as $category )
+                            <li class="py-2 ps-2">
+                                <a class="text-dark" href={{ route( 'announcements.by.category', [$category->name, $category->id]) }}>{{$category->name}}</a>
+                            </li>
+
+                        @endforeach
+                    </ul>
+            </div>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>

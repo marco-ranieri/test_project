@@ -17,8 +17,6 @@ class UserController extends Controller
     {
         $this->middleware('auth');
 
-        $categories = Category::all();
-        View::share('categories', $categories);
     }
 
 
