@@ -35,6 +35,14 @@
                     </div>
                     @endif
 
+                    @if (Auth::user() && Auth::user()->is_revisor)
+                        <a href="{{route('revisor.index')}}">{{\App\Models\Announcement::toBeRevisionedCount()}}</a>
+                        <a href="{{route('revisor.bin')}}">{{\App\Models\Announcement::rejectedCount()}}</a>
+
+
+
+                    @endif
+
                     @guest
                     <a href="{{route('login')}}">Login</a>
                     <a href="{{route('register')}}">Registrati</a>

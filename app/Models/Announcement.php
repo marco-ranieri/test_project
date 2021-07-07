@@ -27,4 +27,14 @@ class Announcement extends Model
 
         return $this->belongsTo(User::class);
     }
+
+    static public function toBeRevisionedCount() {
+
+        return Announcement::where('is_accepted', null)->count();
+    }
+
+    static public function rejectedCount() {
+
+        return Announcement::where('is_accepted', false)->count();
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Sail\Console\PublishCommand;
@@ -25,6 +26,8 @@ Route::get('/category/{name}/{id}/announcements', [PublicController::class, 'ann
 Route::get('/announcements/new', [UserController::class, 'newAnnouncement'])->name('announcement.new');
 Route::post('/announcements/store', [UserController::class, 'storeAnnouncement'])->name('announcement.store');
 
-// Revisor requests
+// Revisor
 Route::get('/revisor', [UserController::class, 'revisorRequest'])->name('revisor.request');
 Route::post('/revisor/submit', [UserController::class, 'revisorRequestSubmit'])->name('revisor.submit');
+Route::get('/revisor/console', [RevisorController::class, 'revisorIndex'])->name('revisor.index');
+Route::get('/revisor/console/bin', [RevisorController::class, 'revisorBin'])->name('revisor.bin');
