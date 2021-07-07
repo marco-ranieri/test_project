@@ -9,6 +9,18 @@ use Illuminate\Support\Facades\Mail;
 class UserController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    public function newAnnouncement() {
+
+        return view('announcements.new');
+    }
+
+
     public function revisorRequest(){
 
         return view('revisor_request');

@@ -22,6 +22,9 @@
                                         <a class="text-dark" href="{{route('revisor.request')}}">Diventa Revisore!</a>
                                     </li>
                                 @endif
+                                <li class="nav-item px-2">
+                                    <a class="nav-link" href="{{route('announcement.new')}}">Nuovo annuncio</a>
+                                </li>
                                 <li class="py-2 ps-2">
                                     <a class="text-dark" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit();">Logout <i class="fas fa-sign-out-alt"></i></a>
                                     <form method="POST" action="{{route('logout')}}"" id="logout">

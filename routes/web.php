@@ -20,6 +20,9 @@ use Laravel\Sail\Console\PublishCommand;
 // General
 Route::get('/', [PublicController::class, 'home'])->name('home');
 
+// Announcements
+Route::get('/announcements/new', [UserController::class, 'newAnnouncement'])->name('announcement.new');
+
 // Revisor requests
 Route::get('/revisor', [UserController::class, 'revisorRequest'])->name('revisor.request');
 Route::post('/revisor/submit', [UserController::class, 'revisorRequestSubmit'])->name('revisor.submit');
