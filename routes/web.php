@@ -19,6 +19,7 @@ use Laravel\Sail\Console\PublishCommand;
 
 // General
 Route::get('/', [PublicController::class, 'home'])->name('home');
+Route::get('/category/{name}/{id}/announcements', [PublicController::class, 'announcementsByCategory'])->name('announcements.by.category');
 
 // Announcements
 Route::get('/announcements/new', [UserController::class, 'newAnnouncement'])->name('announcement.new');
