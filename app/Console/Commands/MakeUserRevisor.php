@@ -43,7 +43,7 @@ class MakeUserRevisor extends Command
 
         $user = User::where('email', $email)->first();
 
-        if(!$user){
+        if(!$user) {
             $this->error('Utente non trovato');
             return;
         }
