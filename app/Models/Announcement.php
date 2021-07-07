@@ -30,11 +30,16 @@ class Announcement extends Model
 
     static public function toBeRevisionedCount() {
 
-        return Announcement::where('is_accepted', null)->count();
+        return Announcement::where('is_accepted', null)->where('is_deleted', false)->count();
     }
 
     static public function rejectedCount() {
 
-        return Announcement::where('is_accepted', false)->count();
+        return Announcement::where('is_accepted', false)->where('is_deleted', false)->count();
+    }
+
+    static public function deletedCount() {
+
+        return Announcement::where('is_deleted', true)->count();
     }
 }

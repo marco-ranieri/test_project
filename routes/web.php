@@ -33,3 +33,8 @@ Route::get('/revisor/console', [RevisorController::class, 'revisorIndex'])->name
 Route::get('/revisor/console/bin', [RevisorController::class, 'revisorBin'])->name('revisor.bin');
 Route::post('/revisor/console/announcement/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
 Route::post('/revisor/console/announcement/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
+Route::post('/revisor/console/announcement/{id}/restore', [RevisorController::class, 'restore'])->name('revisor.restore');
+Route::post('/revisor/console/announcement/{id}/delete', [RevisorController::class, 'delete'])->name('revisor.delete');
+
+Route::get('/revisor/bin/deleted', [RevisorController::class, 'deleted'])->name('revisor.deleted');
+Route::post('/revisor/console/announcement/{id}/power-restore', [RevisorController::class, 'powerRestore'])->name('revisor.power.restore');
