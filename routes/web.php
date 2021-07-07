@@ -31,3 +31,5 @@ Route::get('/revisor', [UserController::class, 'revisorRequest'])->name('revisor
 Route::post('/revisor/submit', [UserController::class, 'revisorRequestSubmit'])->name('revisor.submit');
 Route::get('/revisor/console', [RevisorController::class, 'revisorIndex'])->name('revisor.index');
 Route::get('/revisor/console/bin', [RevisorController::class, 'revisorBin'])->name('revisor.bin');
+Route::post('/revisor/console/announcement/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
+Route::post('/revisor/console/announcement/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');

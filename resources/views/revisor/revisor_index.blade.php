@@ -11,6 +11,14 @@
         <div class="row justify-content-center mb-5 pb-5">
             @foreach ($announcements as $announcement)
                 @include('announcements._announcement')
+                <form action="{{route('revisor.accept', $announcement->id)}}" method="POST">
+                    @csrf
+                    <button type="submit">Accetta</button>
+                </form>
+                <form action="{{route('revisor.reject', $announcement->id)}}" method="POST">
+                    @csrf
+                    <button type="submit">Rifiuta</button>
+                </form>
             @endforeach
         </div>
 

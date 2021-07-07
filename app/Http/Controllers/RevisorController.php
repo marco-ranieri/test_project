@@ -27,4 +27,23 @@ class RevisorController extends Controller
         return view('revisor.revisor_bin', compact('announcements'));
 
     }
+
+    private function setAccepted($announcement_id, $value) {
+
+        $announcement = Announcement::find($announcement_id);
+        $announcement->is_accepted = $value;
+        $announcement->save();
+        return redirect(route('revisor.index'));
+
+    }
+
+    public function accept($announcement_id) {
+
+        return $this->setAccepted($announcement_id, true);
+    }
+
+    public function reject($announcement_id) {
+
+        return $this->setAccepted($announcement_id, false);
+    }
 }
