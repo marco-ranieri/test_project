@@ -2,10 +2,17 @@
 
     @if (session('revisor.request.message'))
         <div class="row justify-content-center">
-            <div class="col-md-auto accept-message alert text-center">
+            <div class="col-md-auto text-center">
                 {{session('revisor.request.message')}} <i class="fas fa-check-circle"></i>
             </div>
         </div>
+    @endif
+    @if (session('access.denied.revisor.only'))
+    <div class="row justify-content-center">
+        <div class="col-md-auto text-center">
+            {{session('access.denied.revisor.only')}} <i class="fas fa-exclamation-triangle"></i>
+        </div>
+    </div>
     @endif
 
     <div class="container h-100">
