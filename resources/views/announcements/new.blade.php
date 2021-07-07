@@ -21,16 +21,24 @@
                 <form method="POST" action="{{route('announcement.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="py-3">
-                        <label class="form-label">Inserisci un titolo per il tuo annuncio</label>
-                        <input type="text" name="title" class="form-control" value="{{old('title')}}">
+                        <label for="title" class="form-label">Inserisci un titolo per il tuo annuncio</label>
+                        <input type="text" name="title" id="title" class="form-control" value="{{old('title')}}">
                     </div>
                     <div class="py-3">
-                        <label class="form-label">Inserisci il testo dell'annuncio</label>
-                        <textarea type="text" name="body" class="form-control"></textarea>
+                        <label for="category" class="form-label">Specifica la categoria del prodotto</label>
+                        <select name="category" id="category">
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}" {{ old('category') == $category->id ? 'selected' : '' }}>{{$category->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="py-3">
-                        <label class="form-label">Inserisci il prezzo</label>
-                        <input type="text" name="price" class="form-control" value="{{old('price')}}">
+                        <label for="body" class="form-label">Inserisci il testo dell'annuncio</label>
+                        <textarea type="text" name="body" id="body" class="form-control"></textarea>
+                    </div>
+                    <div class="py-3">
+                        <label for="price" class="form-label">Inserisci il prezzo</label>
+                        <input type="text" name="price" id="price" class="form-control" value="{{old('price')}}">
                     </div>
                     <div class="py-3">
                         <button type="submit" class="btn btn-lg bg-info">Salva annuncio</button>

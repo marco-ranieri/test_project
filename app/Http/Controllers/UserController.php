@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Mail\RevisorRequestMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\View;
 use App\Http\Requests\AnnouncementRequest;
 
 class UserController extends Controller
@@ -14,6 +16,9 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+        $categories = Category::all();
+        View::share('categories', $categories);
     }
 
 
@@ -29,6 +34,7 @@ class UserController extends Controller
             'title' => $request->title,
             'body' => $request->body,
             'price' => $request->price,
+            'category_id' => $request->category,
 
         ]);
 

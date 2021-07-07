@@ -14,6 +14,7 @@ class Announcement extends Model
         'title',
         'body',
         'price',
+        'category_id',
 
     ];
 
