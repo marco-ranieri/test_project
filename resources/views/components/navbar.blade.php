@@ -17,9 +17,11 @@
                     <div class="dropdown px-2">
                         <div class="dropdown-toggle py-2" id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hello, {{Auth::user()->name}}</div>
                             <ul class="dropdown-menu" aria-labelledby="navbarUserDropdown">
-                                <li class="py-2 ps-2">
-                                    <a class="text-dark" href="{{route('revisor.request')}}">Diventa Revisore!</a>
-                                </li>
+                                @if (!(Auth::user()->is_revisor))
+                                    <li class="py-2 ps-2">
+                                        <a class="text-dark" href="{{route('revisor.request')}}">Diventa Revisore!</a>
+                                    </li>
+                                @endif
                                 <li class="py-2 ps-2">
                                     <a class="text-dark" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit();">Logout <i class="fas fa-sign-out-alt"></i></a>
                                     <form method="POST" action="{{route('logout')}}"" id="logout">
