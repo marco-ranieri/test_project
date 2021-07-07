@@ -22,6 +22,7 @@ Route::get('/', [PublicController::class, 'home'])->name('home');
 
 // Announcements
 Route::get('/announcements/new', [UserController::class, 'newAnnouncement'])->name('announcement.new');
+Route::post('/announcements/store', [UserController::class, 'storeAnnouncement'])->name('announcement.store');
 
 // Revisor requests
 Route::get('/revisor', [UserController::class, 'revisorRequest'])->name('revisor.request');

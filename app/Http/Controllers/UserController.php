@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\RevisorRequestMail;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Mail\RevisorRequestMail;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\AnnouncementRequest;
 
 class UserController extends Controller
 {
@@ -18,6 +20,22 @@ class UserController extends Controller
     public function newAnnouncement() {
 
         return view('announcements.new');
+    }
+
+    public function storeAnnouncement(AnnouncementRequest $request) {
+
+        $announcement = Announcement::create([
+
+            'title' => $request->title,
+            'body' => $request->body,
+            'price' => $request->price,
+
+        ]);
+
+        $announcement->save();
+
+        return redirect('/')->with('announcement.created.success', 'ok');
+
     }
 
 

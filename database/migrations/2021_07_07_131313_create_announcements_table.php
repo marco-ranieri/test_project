@@ -17,6 +17,7 @@ class CreateAnnouncementsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('body');
+            $table->string('price')->nullable();
             $table->timestamps();
         });
     }
