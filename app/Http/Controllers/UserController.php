@@ -27,7 +27,7 @@ class UserController extends Controller
 
     public function storeAnnouncement(AnnouncementRequest $request) {
 
-        $announcement = Announcement::create([
+        Announcement::create([
 
             'title' => $request->title,
             'body' => $request->body,
@@ -35,8 +35,6 @@ class UserController extends Controller
             'category_id' => $request->category,
 
         ]);
-
-        $announcement->save();
 
         return redirect('/')->with('announcement.created.success', 'ok');
 
